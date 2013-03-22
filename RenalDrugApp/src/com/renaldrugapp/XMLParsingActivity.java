@@ -15,7 +15,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TabHost;
 import android.widget.TextView;
+
+import android.os.StrictMode;
 
 
 
@@ -46,6 +49,39 @@ public class XMLParsingActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+		if (android.os.Build.VERSION.SDK_INT > 9) {
+		    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		    StrictMode.setThreadPolicy(policy);
+		}
+		
+		TabHost tabs = (TabHost)findViewById(R.id.TabHost01);
+
+        tabs.setup();
+
+        TabHost.TabSpec spec1 = tabs.newTabSpec("tag1");
+
+        spec1.setContent(R.id.Drugs);
+        spec1.setIndicator("Drugs Search");
+
+        tabs.addTab(spec1);
+
+        TabHost.TabSpec spec2 = tabs.newTabSpec("tag2");
+        spec2.setContent(R.id.GFRCalculator);
+        spec2.setIndicator("GFR Calculator");
+
+        tabs.addTab(spec2);
+        
+        TabHost.TabSpec spec3 = tabs.newTabSpec("tag3");
+        spec2.setContent(R.id.Abbreaviations);
+        spec2.setIndicator("Abbreaviations");
+
+        tabs.addTab(spec2);
+        
+        
+        
+        
+		
+		
 		ArrayList<HashMap<String, String>> menuItems = new ArrayList<HashMap<String, String>>();
 		
 		XMLParser parser = new XMLParser();

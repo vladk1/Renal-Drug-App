@@ -1,26 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
-	<!-- Main ListView 
-		 Always give id value as list(@android:id/list)
-	-->
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#514992"
-        android:gravity="center"
-        android:text="Renal Drug App"
-        android:textSize="40sp" />
-
-    <ListView
-        android:id="@android:id/list"
+    <TabHost
+        android:id="@+id/TabHost01"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#b8b5e7" >
-    </ListView>
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
+        android:layout_weight="0.64" >
 
-</LinearLayout>
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:visibility="visible" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="458dp"
+            android:layout_gravity="bottom"
+            android:paddingTop="65px" >
+
+            <RelativeLayout
+                android:id="@+id/Drugs"
+                android:layout_width="fill_parent"
+                android:layout_height="374dp"
+                android:layout_gravity="top"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10" />
+
+                <ListView
+                    android:id="@android:id/list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/editText2"
+                    android:layout_weight="0.65"
+                    android:background="#b8b5e7" >
+                </ListView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/GFRCalculator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10" />
+
+                <ListView
+                    android:id="@android:id/list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="148dp"
+                    android:layout_weight="0.93"
+                    android:background="#b8b5e7" >
+                </ListView>
+            </RelativeLayout>
+            
+            
+             <RelativeLayout
+                android:id="@+id/Abbreaviations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10" />
+
+                <ListView
+                    android:id="@android:id/list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="148dp"
+                    android:layout_weight="0.93"
+                    android:background="#b8b5e7" >
+                </ListView>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </TabHost>
+
+</RelativeLayout>

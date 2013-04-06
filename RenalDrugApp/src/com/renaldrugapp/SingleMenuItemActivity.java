@@ -1,11 +1,15 @@
 package com.renaldrugapp;
 
+//hi
+
+
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class SingleMenuItem  extends Activity {
+public class SingleMenuItemActivity  extends Activity {
 	
 	// XML node keys
 	static final String KEY_DATE = "pubDate";
@@ -14,7 +18,7 @@ public class SingleMenuItem  extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_list);
+        setContentView(R.layout.single_list_item);
         
         // getting intent data
         Intent in = getIntent();

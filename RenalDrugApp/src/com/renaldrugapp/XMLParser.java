@@ -1,7 +1,5 @@
 package com.renaldrugapp;
 
-
-
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
@@ -22,6 +20,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
 import android.util.Log;
 
 public class XMLParser {
@@ -57,8 +56,6 @@ public class XMLParser {
 		// return XML
 		return xml;
 	}
-	
-	
 	
 	/**
 	 * Getting XML DOM element
